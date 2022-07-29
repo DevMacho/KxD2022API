@@ -20,13 +20,13 @@ router.get('/:botId/:userId', (req, res, next) => {
     })
 })
 
-router.put('/addHeart/:botId/:userId', (req, res, next) => {
+router.get('/addHeart/:botId/:userId', (req, res, next) => {
     const userId = req.params.userId;
     const botId = req.params.botId;
     Bot.findOne({ botId })
         .then(bot => {
             if (bot.heartUsers.includes(userId)) {
-            res.status(200).json({message : "이미 하트를 누른 유저입니다"})
+                res.status(200).json({message : "이미 하트를 누른 유저입니다"})
             } else {
                 bot.heartUsers = [...bot.heartUsers, userId]
             }
