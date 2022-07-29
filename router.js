@@ -20,9 +20,9 @@ router.get('/:botId/:userId', (req, res, next) => {
     })
 })
 
-router.put('/addHeart/:userId', (req, res, next) => {
+router.put('/addHeart/:botId/:userId', (req, res, next) => {
     const userId = req.params.userId;
-    const botId = req.body.botId;
+    const botId = req.params.botId;
     Bot.findOne({ botId })
         .then(bot => {
             if (bot.heartUsers.includes(userId)) {
