@@ -29,6 +29,7 @@ router.get('/addHeart/:botId/:userId', (req, res, next) => {
                 res.status(200).json({message : "이미 하트를 누른 유저입니다"})
             } else {
                 bot.heartUsers = [...bot.heartUsers, userId]
+                res.status(200).json({message : "하트 추가가 완료됐습니다"})
             }
     })
 });
