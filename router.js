@@ -3,7 +3,7 @@ import {Bot} from './db.js'
 
 const router = express.Router();
 
-router.get('/:botId/:userId', (req, res, next) => {
+router.get('/get/:botId/:userId', (req, res, next) => {
     const botId = req.params.botId
     const userId = req.params.userId
     Bot.findOne({ botId })
