@@ -4,6 +4,10 @@ import mainRoute from './router.js';
 
 const app = express();
 
+setInterval(() => {
+    console.log("working well")
+}, 60000)
+
 app.use(express.json());
 app.use(cors());
 
